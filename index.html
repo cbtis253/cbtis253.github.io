@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBTis 253 - Centro de Bachillerato Tecnológico Industrial y de Servicios</title>
+    <style>
+        :root {
+            --primary-color: #1B396A;
+            --secondary-color: #CE9A35;
+            --accent-color: #E6EEF8;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        
+        .logo-img {
+            width: 100px;
+            height: auto;
+        }
+        
+        .header-text h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .header-text h2 {
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+        
+        nav {
+            background-color: var(--secondary-color);
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--light-text);
+            padding: 0 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .features {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--accent-color);
+        }
+        
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            flex: 1 1 300px;
+            background-color: var(--light-text);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .feature-content {
+            padding: 20px;
+        }
+        
+        .feature-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .announcements {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .announcements h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+        
+        .announcements-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .announcement {
+            flex: 1 1 300px;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .announcement h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .announcement-date {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1 1 300px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+        
+        .footer-section p, .footer-section address {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .header-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .header-text h2 {
+                font-size: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/api/placeholder/100/100" alt="Logo CBTis 253" class="logo-img">
+            <div class="header-text">
+                <h1>Centro de Bachillerato Tecnológico Industrial y de Servicios No. 253</h1>
+                <h2>Educación de calidad para un futuro tecnológico</h2>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Oferta Educativa</a></li>
+            <li><a href="#">Instalaciones</a></li>
+            <li><a href="#">Servicios Escolares</a></li>
+            <li><a href="#">Calendario</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <h2>Formando profesionales técnicos del futuro</h2>
+        <p>El CBTis 253 ofrece educación media superior de calidad con especialidades técnicas orientadas a la industria y los servicios.</p>
+        <a href="#" class="btn">Conoce nuestras especialidades</a>
+    </section>
+    
+    <section class="features">
+        <h2>Nuestras Especialidades</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <img src="/api/placeholder/400/200" alt="Programación">
+                <div class="feature-content">
+                    <h3>Técnico en Programación</h3>
+                    <p>Desarrolla habilidades en lenguajes de programación, bases de datos y desarrollo de aplicaciones.</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <img src="/api/placeholder/400/200" alt="Electrónica">
+                <div class="feature-content">
+                    <h3>Técnico en Administración de Recursos Humanos</h3>
+                    <p>Aprende sobre la Administración, y el Manejo de Nomina.</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <img src="/api/placeholder/400/200" alt="Contabilidad">
+                <div class="feature-content">
+                    <h3>Técnico en Alimentos y Bebidas</h3>
+                    <p>Preparate para conocer como crear diversas recetas y la atención al cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="announcements">
+        <h2>Avisos Importantes</h2>
+        <div class="announcements-container">
+            <div class="announcement">
+                <h3>Inscripciones para el ciclo escolar 2025-2026</h3>
+                <div class="announcement-date">Publicado: 1 de marzo de 2025</div>
+                <p>Las inscripciones para el próximo ciclo escolar ya están abiertas. Consulta los requisitos y fechas importantes.</p>
+            </div>
+            
+            <div class="announcement">
+                <h3>Certificación en competencias digitales</h3>
+                <div class="announcement-date">Publicado: 25 de febrero de 2025</div>
+                <p>Nueva oportunidad para certificarte en competencias digitales con validez oficial.</p>
+            </div>
+            
+            <div class="announcement">
+                <h3>Periodo de exámenes extraordinarios</h3>
+                <div class="announcement-date">Publicado: 20 de febrero de 2025</div>
+                <p>El periodo de exámenes extraordinarios comenzará el 15 de marzo. Verifica los horarios con tu tutor.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <address>
+                    Av. Tecnológico #123<br>
+                    Col. Educativa, C.P. 12345<br>
+                    Ciudad, Estado
+                </address>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Email: contacto@cbtis253.edu.mx</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <p><a href="#" style="color: white;">Admisiones</a></p>
+                <p><a href="#" style="color: white;">Becas</a></p>
+                <p><a href="#" style="color: white;">Servicio Social</a></p>
+                <p><a href="#" style="color: white;">Prácticas Profesionales</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">TW</a>
+                    <a href="#">IG</a>
+                    <a href="#">YT</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 CBTis 253 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
