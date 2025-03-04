@@ -3,354 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBTis 253 - Centro de Bachillerato Tecnológico Industrial y de Servicios</title>
-    <style>
-        :root {
-            --primary-color: #1B396A;
-            --secondary-color: #CE9A35;
-            --accent-color: #E6EEF8;
-            --text-color: #333;
-            --light-text: #fff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 20px 0;
-            text-align: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 0 20px;
-        }
-        
-        .logo-img {
-            width: 100px;
-            height: auto;
-        }
-        
-        .header-text h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-        
-        .header-text h2 {
-            font-size: 1.2rem;
-            font-weight: normal;
-        }
-        
-        nav {
-            background-color: var(--secondary-color);
-            padding: 10px 0;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            background-color: var(--primary-color);
-            border-radius: 4px;
-        }
-        
-        .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--light-text);
-            padding: 0 20px;
-        }
-        
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--light-text);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        .features {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: var(--accent-color);
-        }
-        
-        .features h2 {
-            font-size: 2rem;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-        }
-        
-        .features-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .feature-card {
-            flex: 1 1 300px;
-            background-color: var(--light-text);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .feature-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .feature-content {
-            padding: 20px;
-        }
-        
-        .feature-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .announcements {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .announcements h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-        }
-        
-        .announcements-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .announcement {
-            flex: 1 1 300px;
-            border-left: 4px solid var(--secondary-color);
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 0 5px 5px 0;
-        }
-        
-        .announcement h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .announcement-date {
-            color: #777;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-        }
-        
-        .footer-section {
-            flex: 1 1 300px;
-            text-align: left;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-        }
-        
-        .footer-section p, .footer-section address {
-            margin-bottom: 10px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            color: var(--light-text);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .copyright {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .header-text h1 {
-                font-size: 1.5rem;
-            }
-            
-            .header-text h2 {
-                font-size: 1rem;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 5px 0;
-            }
-            
-            .logo-container {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title>CBTis 253 - Centro de Bachillerato Tecnológico Industrial y de Servicios "Miguel Hidalgo y Costilla"</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/icon/tiger-1.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="/api/placeholder/100/100" alt="Logo CBTis 253" class="logo-img">
+            <img src="./assets/images/LogoRojoSVG.svg" alt="Logo CBTis 253" class="logo-img">
             <div class="header-text">
                 <h1>Centro de Bachillerato Tecnológico Industrial y de Servicios No. 253</h1>
-                <h2>Educación de calidad para un futuro tecnológico</h2>
+                <h2>"Miguel Hidalgo y Costilla"</h2>
             </div>
         </div>
     </header>
     
+    <div class="info-bar">
+        <span>Email: <a href="mailto:direccion@cbtis253.edu.mx">direccion@cbtis253.edu.mx</a> | Teléfono: +52 983-180-7371 | Horario de atención: 9:00 a.m. a 6:00 p.m.</span>
+    </div>
+    
     <nav>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Oferta Educativa</a></li>
-            <li><a href="#">Instalaciones</a></li>
-            <li><a href="#">Servicios Escolares</a></li>
-            <li><a href="#">Calendario</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#oferta-educativa">Oferta Educativa</a></li>
+            <li><a href="#mision-vision">Misión y Visión</a></li>
+            <li><a href="#programas">Programas Institucionales</a></li>
+            <li><a href="#directorio">Directorio</a></li>
+            <li><a href="#avisos">Avisos Importantes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
     
-    <section class="hero">
+    <section class="hero" id="inicio">
         <h2>Formando profesionales técnicos del futuro</h2>
         <p>El CBTis 253 ofrece educación media superior de calidad con especialidades técnicas orientadas a la industria y los servicios.</p>
-        <a href="#" class="btn">Conoce nuestras especialidades</a>
+        <a href="#oferta-educativa" class="btn">Conoce nuestras especialidades</a>
     </section>
     
-    <section class="features">
-        <h2>Nuestras Especialidades</h2>
+    <section class="features" id="oferta-educativa">
+        <h2 class="section-title">Nuestra Oferta Educativa</h2>
+        
         <div class="features-container">
-            <div class="feature-card">
-                <img src="/api/placeholder/400/200" alt="Programación">
-                <div class="feature-content">
-                    <h3>Técnico en Programación</h3>
-                    <p>Desarrolla habilidades en lenguajes de programación, bases de datos y desarrollo de aplicaciones.</p>
+            <!-- Acordeón para Técnico en Programación -->
+            <div class="accordion">
+                <div class="accordion-header">Técnico en Programación</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <img src="./assets/images/Prog-162x300.jpg" alt="Programación" style="width:150px; margin-bottom:15px;">
+                        
+                        <div class="tab-container">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" onclick="openTab(event, 'prog-descripcion')">Descripción</button>
+                                <button class="tab-button" onclick="openTab(event, 'prog-modulos')">Módulos</button>
+                                <button class="tab-button" onclick="openTab(event, 'prog-perfil')">Perfil de Egreso</button>
+                                <button class="tab-button" onclick="openTab(event, 'prog-campo')">Campo Laboral</button>
+                            </div>
+                            
+                            <div id="prog-descripcion" class="tab-content active">
+                                <p>El Bachillerato Tecnológico con especialidad en Técnico en Programación ofrece las competencias profesionales que permiten al estudiante realizar actividades dirigidas a: analizar, diseñar, desarrollar, instalar y mantener software de aplicación tomando como base los requerimientos del usuario.</p>
+                                <p>Todas estas competencias posibilitan al egresado su incorporación al mundo laboral o desarrollar procesos productivos independientes, de acuerdo con sus intereses profesionales y necesidades de su entorno social.</p>
+                            </div>
+                            
+                            <div id="prog-modulos" class="tab-content">
+                                <h4>MÓDULOS QUE INTEGRAN LA CARRERA</h4>
+                                <p><strong>MODULO I:</strong> DESARROLLA SOFTWARE DE APLICACIÓN CON PROGRAMACIÓN ESTRUCTURADA</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – CONSTRUYE ALGORITMOS PARA LA SOLUCIÓN DE PROBLEMAS</li>
+                                    <li>SUBMÓDULO 2 – APLICA ESTRUCTURAS DE CONTROL CON UN LENGUAJE DE PROGRAMACIÓN</li>
+                                    <li>SUBMÓDULO 3 – APLICA ESTRUCTURAS DE DATOS CON UN LENGUAJE DE PROGRAMACIÓN</li>
+                                </ul>
+                                <p><strong>MODULO II:</strong> APLICA METODOLOGÍAS DE DESARROLLO DE SOFTWARE CON HERRAMIENTAS DE PROGRAMACIÓN VISUAL</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – APLICA LA METODOLOGÍA ESPIRAL CON PROGRAMACIÓN ORIENTADA A OBJETOS</li>
+                                    <li>SUBMÓDULO 2 – APLICA LA METODOLOGÍA DE DESARROLLO RÁPIDO DE APLICACIONES CON PROGRAMACIÓN ORIENTADA A EVENTOS</li>
+                                </ul>
+                                <p><strong>MODULO III:</strong> DESARROLLA APLICACIONES WEB</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – CONSTRUYE PÁGINAS WEB</li>
+                                    <li>SUBMÓDULO 2 – DESARROLLA APLICACIONES QUE SE EJECUTAN EN EL CLIENTE</li>
+                                    <li>SUBMÓDULO 3 – DESARROLLA APLICACIONES QUE SE EJECUTAN EN EL SERVIDOR</li>
+                                </ul>
+                                <p><strong>MODULO IV:</strong> DESARROLLA SOFTWARE DE APLICACIÓN WEB CON ALMACENAMIENTO PERSISTENTE DE DATOS</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – CONSTRUYE BASES DE DATOS PARA APLICACIONES WEB</li>
+                                    <li>SUBMÓDULO 2 – DESARROLLA APLICACIONES WEB CON CONEXIÓN A BASES DE DATOS</li>
+                                </ul>
+                                <p><strong>MODULO V:</strong> DESARROLLA APLICACIONES PARA DISPOSITIVOS MÓVILES</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – DESARROLLA APLICACIONES MÓVILES PARA ANDROID</li>
+                                    <li>SUBMÓDULO 2 – DESARROLLA APLICACIONES MÓVILES PARA IOS</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="prog-perfil" class="tab-content">
+                                <h4>PERFIL DE EGRESO</h4>
+                                <p>La formación que ofrece la especialidad en Técnico en Programación permite al egresado realizar actividades dirigidas a:</p>
+                                <ul>
+                                    <li>Instalación y desarrollo de software de aplicación utilizando programación estructurada y orientada a objetos en ambientes web y móviles, con almacenamiento persistente de datos</li>
+                                    <li>Configuración y administración de plataforma e-learning</li>
+                                    <li>Administración e implementación del Comercio electrónico</li>
+                                </ul>
+                                <p><strong>Competencias profesionales desarrolladas:</strong></p>
+                                <ul>
+                                    <li>Desarrolla e instala software de aplicación utilizando programación estructurada, con almacenamiento persistente de los datos</li>
+                                    <li>Desarrolla software de aplicación utilizando programación orientada a objetos, con almacenamiento persistente de los datos</li>
+                                    <li>Desarrolla aplicaciones web y móviles</li>
+                                    <li>Administra sistemas operativos, aplicaciones y servicios</li>
+                                    <li>Desarrolla, administra y configura soluciones de e-learning y comercio electrónico</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="prog-campo" class="tab-content">
+                                <h4>CAMPO LABORAL</h4>
+                                <ul>
+                                    <li>Edición de Software y edición de software integrada con la reproducción</li>
+                                    <li>Servicios de diseño de sistemas de cómputo y servicios relacionados</li>
+                                    <li>Escuelas de computación del sector privado</li>
+                                    <li>Escuelas de computación del sector público</li>
+                                    <li>Edición y difusión de contenido exclusivamente a través de Internet</li>
+                                    <li>Servicios de búsqueda en la red</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="feature-card">
-                <img src="/api/placeholder/400/200" alt="Electrónica">
-                <div class="feature-content">
-                    <h3>Técnico en Administración de Recursos Humanos</h3>
-                    <p>Aprende sobre la Administración, y el Manejo de Nomina.</p>
+            <!-- Acordeón para Técnico en Laboratorista Clínico -->
+            <div class="accordion">
+                <div class="accordion-header">Técnico en Laboratorista Clínico</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <img src="./assets/images/LC-162x300.jpg" alt="Laboratorista Clínico" style="width:150px; margin-bottom:15px;">
+                        
+                        <div class="tab-container">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" onclick="openTab(event, 'lab-descripcion')">Descripción</button>
+                                <button class="tab-button" onclick="openTab(event, 'lab-modulos')">Módulos</button>
+                                <button class="tab-button" onclick="openTab(event, 'lab-perfil')">Perfil de Egreso</button>
+                                <button class="tab-button" onclick="openTab(event, 'lab-campo')">Campo Laboral</button>
+                            </div>
+                            
+                            <div id="lab-descripcion" class="tab-content active">
+                                <p>Estudia la carrera que puede cambiar la vida de muchas personas, analiza y estudia casos de laboratorio clínico, si te apasiona el funcionamiento del cuerpo humano y tu sueño es ser parte del equipo de alguna organización u empresa de salud. ¡Tu lugar es con nosotros!</p>
+                                <p>La formación que ofrece la carrera de Técnico Laboratorista Clínico permite al egresado, a través de la articulación de saberes de diversos campos, realizar actividades dirigidas a: manejar, tratar, aprovechar y realizar la disposición final de los residuos sólidos industriales mediante el auxilio, planeación y ejecución de programas enfocados a la gestión de los residuos sólidos industriales.</p>
+                            </div>
+                            
+                            <div id="lab-modulos" class="tab-content">
+                                <h4>MÓDULOS QUE INTEGRAN LA CARRERA</h4>
+                                <p><strong>MODULO I:</strong> AUXILIA EN LOS PROCESOS BÁSICOS DE LABORATORIO CLÍNICO</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – PREPARA SOLUCIONES PARA LAS OPERACIONES BÁSICAS DEL LABORATORIO</li>
+                                    <li>SUBMÓDULO 2 – TOMA MUESTRAS BIOLÓGICAS</li>
+                                </ul>
+                                <p><strong>MODULO II:</strong> IDENTIFICA MICROORGANISMOS CON BASE EN TÉCNICAS MICROBIOLÓGICAS PARA DIAGNÓSTICO CLÍNICO</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – IDENTIFICA MICROORGANISMOS CON BASE EN TÉCNICAS BACTERIOLÓGICAS</li>
+                                    <li>SUBMÓDULO 2 – IDENTIFICA MICROORGANISMOS CON BASE EN TÉCNICAS PARASITOLÓGICAS</li>
+                                </ul>
+                                <p><strong>MODULO III:</strong> ANALIZA FLUIDOS CORPORALES DE INTERÉS CLÍNICO</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – REALIZA ANÁLISIS HEMATOLÓGICOS DE SERIE ROJA</li>
+                                    <li>SUBMÓDULO 2 – REALIZA ANÁLISIS INMUNOLÓGICOS</li>
+                                    <li>SUBMÓDULO 3 – REALIZA ANÁLISIS CITOQUÍMICOS A LÍQUIDOS Y SECRECIONES CORPORALES</li>
+                                </ul>
+                                <p><strong>MODULO IV:</strong> ANALIZA SANGRE CON BASE EN TÉCNICAS INMUNOHEMATOLÓGICAS Y HEMOSTÁTICAS</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – REALIZA ANÁLISIS HEMATOLÓGICOS DE SERIE BLANCA Y HEMOSTASIA</li>
+                                    <li>SUBMÓDULO 2 – ANALIZA Y FRACCIONA SANGRE CON FINES TRANSFUSIONALES</li>
+                                </ul>
+                                <p><strong>MODULO V:</strong> ANALIZA SANGRE CON BASE EN TÉCNICAS DE QUÍMICA CLÍNICA Y PRUEBAS ESPECIALES</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – ANALIZA SANGRE CON BASE EN TÉCNICAS DE QUÍMICA CLÍNICA</li>
+                                    <li>SUBMÓDULO 2 – ANALIZA SANGRE MEDIANTE PRUEBAS HORMONALES, TOXICOLÓGICAS Y DE MARCADORES TUMORALES</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="lab-perfil" class="tab-content">
+                                <h4>PERFIL DE EGRESO</h4>
+                                <p>La formación que ofrece la especialidad en Técnico en Laboratorista Clínico permite al egresado, a través de la articulación de saberes de diversos campos, realizar actividades dirigidas a:</p>
+                                <p><strong>Competencias profesionales desarrolladas:</strong></p>
+                                <ul>
+                                    <li>Auxilia en los procesos básicos de laboratorio clínico</li>
+                                    <li>Identifica microorganismos con base en técnicas microbiológicas para diagnóstico clínico</li>
+                                    <li>Analiza fluidos corporales de interés clínico</li>
+                                    <li>Analiza sangre con base en técnicas inmunohematológicas y hemostáticas</li>
+                                    <li>Analiza sangre con base en técnicas de química clínica y pruebas especiales</li>
+                                </ul>
+                                <p><strong>Competencias de empleabilidad y productividad:</strong></p>
+                                <ul>
+                                    <li>Escuchar, informar con veracidad y saber a dónde dirigirlo</li>
+                                    <li>Actuar responsablemente de acuerdo a las normas y disposiciones definidas</li>
+                                    <li>Registrar y revisar información para asegurar que sea correcta</li>
+                                    <li>Verificar el cumplimiento de los parámetros de calidad exigidos</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="lab-campo" class="tab-content">
+                                <h4>CAMPO LABORAL</h4>
+                                <ul>
+                                    <li>Centros de salud públicos y privados (Clínicas, hospitales, policlínicos, entre otros)</li>
+                                    <li>Laboratorios particulares</li>
+                                    <li>Industria de alimentos</li>
+                                    <li>Centros de diagnósticos</li>
+                                    <li>Consultorios particulares</li>
+                                    <li>Investigación científica</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="feature-card">
-                <img src="/api/placeholder/400/200" alt="Contabilidad">
-                <div class="feature-content">
-                    <h3>Técnico en Alimentos y Bebidas</h3>
-                    <p>Preparate para conocer como crear diversas recetas y la atención al cliente.</p>
+            <!-- Acordeón para Técnico en Alimentos y Bebidas -->
+            <div class="accordion">
+                <div class="accordion-header">Técnico en Alimentos y Bebidas</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <img src="./assets/images/AYB-162x300.png" alt="Alimentos y Bebidas" style="width:150px; margin-bottom:15px;">
+                        
+                        <div class="tab-container">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" onclick="openTab(event, 'ayb-descripcion')">Descripción</button>
+                                <button class="tab-button" onclick="openTab(event, 'ayb-modulos')">Módulos</button>
+                                <button class="tab-button" onclick="openTab(event, 'ayb-perfil')">Perfil de Egreso</button>
+                                <button class="tab-button" onclick="openTab(event, 'ayb-campo')">Campo Laboral</button>
+                            </div>
+                            
+                            <div id="ayb-descripcion" class="tab-content active">
+                                <p>La carrera de Técnico en preparación de alimentos y bebidas surge como una vertiente de la carrera de Servicios Turísticos. Esta nueva vertiente ofrece las competencias profesionales que permiten al estudiante preparar alimentos, bebidas, productos de panadería y repostería, así como servir al comensal.</p>
+                                <p>La formación profesional se inicia en el segundo semestre y se concluye en el sexto semestre, desarrollando en este lapso de tiempo las competencias para preparar bases culinarias, preparar alimentos de acuerdo al recetario base, servir al comensal según estándares de la empresa, preparar bebidas y cocteles; y preparar productos de panadería y repostería.</p>
+                            </div>
+                            
+                            <div id="ayb-modulos" class="tab-content">
+                                <h4>MÓDULOS QUE INTEGRAN LA CARRERA</h4>
+                                <p><strong>MODULO I:</strong> PREPARA BASES CULINARIAS</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – MANEJO DE NORMAS DE HIGIENE Y SEGURIDAD EN LA PREPARACIÓN DE ALIMENTOS Y BEBIDAS</li>
+                                    <li>SUBMÓDULO 2 – CORTES DE VEGETALES, FRUTAS Y CARNES</li>
+                                    <li>SUBMÓDULO 3 – PREPARA FONDOS, SALSAS MADRES Y DERIVADAS DE ACUERDO AL RECETARIO BASE</li>
+                                </ul>
+                                <p><strong>MODULO II:</strong> PREPARA ALIMENTOS DE ACUERDO AL RECETARIO BASE</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – PREPARA ENTRADAS Y SOPAS DE ACUERDO A LA RECETA ESTÁNDAR</li>
+                                    <li>SUBMÓDULO 2 – PREPARA PLATILLOS REPRESENTATIVOS DE LA COCINA MEXICANA</li>
+                                    <li>SUBMÓDULO 3 – PREPARA PLATILLOS REPRESENTATIVOS DE LA COCINA INTERNACIONAL</li>
+                                </ul>
+                                <p><strong>MODULO III:</strong> PREPARA PRODUCTOS DE PANADERÍA Y REPOSTERÍA</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – PREPARA PRODUCTOS DE PANADERÍA DE ACUERDO AL RECETARIO BASE</li>
+                                    <li>SUBMÓDULO 2 – PREPARA PRODUCTOS DE REPOSTERÍA DE ACUERDO AL RECETARIO BASE</li>
+                                </ul>
+                                <p><strong>MODULO IV:</strong> SIRVE AL COMENSAL SEGÚN ESTÁNDARES DE LA EMPRESA</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – MONTA MESAS DE ACUERDO AL TIPO DE SERVICIO</li>
+                                    <li>SUBMÓDULO 2 – SIRVE ALIMENTOS Y BEBIDAS</li>
+                                </ul>
+                                <p><strong>MODULO V:</strong> PREPARA BEBIDAS ALCOHÓLICAS Y NO ALCOHÓLICAS</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – ORIGEN Y CLASIFICACIÓN DE LAS BEBIDAS</li>
+                                    <li>SUBMÓDULO 2 – PREPARA BEBIDAS Y COCTELES DE ACUERDO AL RECETARIO BASE</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="ayb-perfil" class="tab-content">
+                                <h4>PERFIL DE EGRESO</h4>
+                                <p><strong>Competencias profesionales desarrolladas:</strong></p>
+                                <ul>
+                                    <li>Prepara bases culinarias</li>
+                                    <li>Prepara alimentos de acuerdo con el recetario base</li>
+                                    <li>Prepara productos de panadería y repostería</li>
+                                    <li>Sirve al comensal según estándares de la empresa</li>
+                                    <li>Prepara bebidas alcohólicas y no alcohólicas</li>
+                                </ul>
+                                <p><strong>Competencias de empleabilidad y productividad:</strong></p>
+                                <ul>
+                                    <li>Trabajo en equipo</li>
+                                    <li>Comunicación efectiva</li>
+                                    <li>Atención al cliente</li>
+                                    <li>Ética profesional</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="ayb-campo" class="tab-content">
+                                <h4>CAMPO LABORAL</h4>
+                                <ul>
+                                    <li>Restaurantes</li>
+                                    <li>Hoteles y Resorts</li>
+                                    <li>Hospitales y Albergues</li>
+                                    <li>Cruceros</li>
+                                    <li>Panaderías y Pastelerías</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Acordeón para Técnico en Administración de Recursos Humanos -->
+            <div class="accordion">
+                <div class="accordion-header">Técnico en Administración de Recursos Humanos</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <img src="./assets/images/RH-162x300.jpg" alt="Recursos Humanos" style="width:150px; margin-bottom:15px;">
+                        
+                        <div class="tab-container">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" onclick="openTab(event, 'arh-descripcion')">Descripción</button>
+                                <button class="tab-button" onclick="openTab(event, 'arh-modulos')">Módulos</button>
+                                <button class="tab-button" onclick="openTab(event, 'arh-perfil')">Perfil de Egreso</button>
+                                <button class="tab-button" onclick="openTab(event, 'arh-campo')">Campo Laboral</button>
+                            </div>
+                            
+                            <div id="arh-descripcion" class="tab-content active">
+                                <p>El Bachillerato Tecnológico con especialidad en Técnico en Administración de Recursos Humanos se desarrolla como vertiente de la especialidad en Administración y ofrece las competencias profesionales que permiten al estudiante elaborar y gestionar documentación administrativa referente a recursos humanos, integrar al personal a la organización, asistir en actividades de capacitación, desarrollo y evaluación del personal, así como determinar las remuneraciones al personal.</p>
+                                <p>La formación profesional se inicia en el segundo semestre y se concluye en el sexto semestre, desarrollando en este lapso de tiempo las competencias para elaborar y gestionar la información de la organización, integrar el capital humano a la organización, asistir en el control y evaluación del desempeño del capital humano, controlar los procesos y servicios de higiene y seguridad del capital humano en la organización, determinar las remuneraciones al capital humano de la organización.</p>
+                            </div>
+                            
+                            <div id="arh-modulos" class="tab-content">
+                                <h4>MÓDULOS QUE INTEGRAN LA CARRERA</h4>
+                                <p><strong>MODULO I:</strong> PLANTEA ACTIVIDADES DEL ÁREA DE RECURSOS HUMANOS EN FUNCIÓN A CADA ÁREA DE LA ORGANIZACIÓN</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – DISTINGUE LOS DIFERENTES TIPOS DE EMPRESA POR SU GIRO, ÁREAS FUNCIONALES, DOCUMENTACIÓN ADMINISTRATIVA Y RECURSOS</li>
+                                    <li>SUBMÓDULO 2 – ELABORA ESTRATEGIAS PARA REALIZAR LAS ACTIVIDADES DE SU ÁREA</li>
+                                </ul>
+                                <p><strong>MODULO II:</strong> INTEGRA EL CAPITAL HUMANO A LA ORGANIZACIÓN</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – REALIZA EL PROCESO DE ADMISIÓN Y EMPLEO</li>
+                                    <li>SUBMÓDULO 2 – CONTRIBUYE A LA INTEGRACIÓN Y DESARROLLO DEL PERSONAL EN LA ORGANIZACIÓN</li>
+                                </ul>
+                                <p><strong>MODULO III:</strong> ASISTE EN EL CONTROL Y EVALUACIÓN DEL DESEMPEÑO DEL CAPITAL HUMANO DE LA ORGANIZACIÓN</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – ASISTE EN LAS ACTIVIDADES DE CAPACITACIÓN PARA EL DESARROLLO DEL CAPITAL HUMANO</li>
+                                    <li>SUBMÓDULO 2 – EVALÚA EL DESEMPEÑO DE LA ORGANIZACIÓN UTILIZANDO HERRAMIENTAS DE CALIDAD</li>
+                                </ul>
+                                <p><strong>MODULO IV:</strong> CONTROLA LOS PROCESOS Y SERVICIOS DE HIGIENE Y SEGURIDAD DEL CAPITAL HUMANO EN LA ORGANIZACIÓN</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – SUPERVISA EL CUMPLIMIENTO DE LAS MEDIDAS DE HIGIENE Y SEGURIDAD EN LA ORGANIZACIÓN</li>
+                                    <li>SUBMÓDULO 2 – SUPERVISA EL CUMPLIMIENTO DE TAREAS Y PROCESOS PARA EVALUAR LA PRODUCTIVIDAD EN LA ORGANIZACIÓN</li>
+                                </ul>
+                                <p><strong>MODULO V:</strong> DETERMINA LAS REMUNERACIONES AL CAPITAL HUMANO DE LA ORGANIZACIÓN</p>
+                                <ul>
+                                    <li>SUBMÓDULO 1 – DETERMINA LA NÓMINA DEL PERSONAL DE LA ORGANIZACIÓN TOMANDO EN CUENTA LA NORMATIVIDAD LABORAL</li>
+                                    <li>SUBMÓDULO 2 – DETERMINA REMUNERACIONES DEL PERSONAL EN SITUACIONES EXTRAORDINARIAS</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="arh-perfil" class="tab-content">
+                                <h4>PERFIL DE EGRESO</h4>
+                                <p>La formación que ofrece la especialidad en Técnico en Administración de Recursos Humanos permite al egresado, a través de la articulación de saberes de diversos campos, realizar actividades dirigidas a la:</p>
+                                <ul>
+                                    <li>Aplicación del proceso administrativo por medio de estrategias, herramientas, metodologías y técnicas para optimizar los recursos humanos de la organización.</li>
+                                    <li>Reclutación, selección y contratación de personas de acuerdo con los requerimientos de la organización.</li>
+                                    <li>Administración y gestión de la información documental de forma prudente y confidencial de acuerdo con los procedimientos de operación.</li>
+                                    <li>Gestión y cálculo de la nómina, pagos extraordinarios, liquidaciones o finiquitos de acuerdo con las disposiciones legales.</li>
+                                </ul>
+                                <p><strong>Competencias de empleabilidad y productividad:</strong></p>
+                                <ul>
+                                    <li>Trabajo en equipo</li>
+                                    <li>Comunicación efectiva</li>
+                                    <li>Planeación y organización</li>
+                                    <li>Orientación a la mejora continua</li>
+                                    <li>Ética profesional</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="arh-campo" class="tab-content">
+                                <h4>CAMPO LABORAL</h4>
+                                <ul>
+                                    <li>Empresas Públicas y Privadas</li>
+                                    <li>Pymes y Empresas Grandes</li>
+                                    <li>Sectores Gubernamentales, Industrial y Servicios</li>
+                                    <li>Organizaciones no lucrativas</li>
+                                    <li>Asociaciones de todo tipo</li>
+                                    <li>Empresas Nacionales y Trasnacionales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="announcements">
-        <h2>Avisos Importantes</h2>
+    <section class="mission-vision" id="mision-vision">
+        <h2 class="section-title" style="color: white;">Misión y Visión</h2>
+        <div class="mission-vision-container">
+            <div class="mission-box">
+                <h3>Misión</h3>
+                <p>Formar personas con conocimientos tecnológicos en las áreas industrial, comercial y de servicios, a través de la preparación de profesionales técnicos y bachilleres, con el fin de contribuir al desarrollo sustentable del país.</p>
+            </div>
+            
+            <div class="vision-box">
+                <h3>Visión</h3>
+                <p>Ser una institución de Educación Media Superior competitiva, certificada, orientada al aprendizaje y desarrollo de conocimientos tecnológicos – humanísticos que satisfagan las necesidades de nuestra comunidad.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="programs" id="programas">
+        <h2 class="section-title">Programas Institucionales</h2>
+        <div class="programs-container">
+            <div class="program-card">
+                <img src="assets/images/ConstruyeT.jpg" alt="Construye T">
+                <div class="program-content">
+                    <h3>Construye T</h3>
+                    <p>Programa de desarrollo de habilidades socioemocionales para jóvenes.</p>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <img src="assets/images/FomentoALaLectura.jpg" alt="Pronafole">
+                <div class="program-content">
+                    <h3>PRONAFOLE</h3>
+                    <p>Programa Nacional de Fomento a la Lectura para fortalecer hábitos de lectura.</p>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <img src="assets/images/AmaDGETI.jpg" alt="Ama DGETI">
+                <div class="program-content">
+                    <h3>AMA DGETI</h3>
+                    <p>Programa para promover el cuidado del medio ambiente.</p>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <img src="assets/images/ProgramaDeTutorias.jpg" alt="Tutorías">
+                <div class="program-content">
+                    <h3>Programa de Tutorías</h3>
+                    <p>Apoyo académico y acompañamiento para estudiantes.</p>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <img src="assets/images/Fomalasa.jpg" alt="Fomalasa">
+                <div class="program-content">
+                    <h3>FOMALASA</h3>
+                    <p>Programa de Fomento a la Salud para promover hábitos saludables.</p>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <img src="assets/images/BecaEducacionMediaSuperior.jpg" alt="Becas">
+                <div class="program-content">
+                    <h3>Becas Benito Juárez</h3>
+                    <p>Becas para estudiantes de educación media superior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="directory" id="directorio">
+        <h2 class="section-title">Directorio Institucional</h2>
+        <table class="directory-table">
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>CARGO</th>
+                    <th>CORREO ELECTRÓNICO</th>
+                    <th>TELÉFONO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CAMPOS HERRERA ASIS ILEANA</td>
+                    <td>DIRECTORA DEL PLANTEL</td>
+                    <td><a href="mailto:cbtis253.dir@dgeti.sems.gob.mx">cbtis253.dir@dgeti.sems.gob.mx</a></td>
+                    <td>9838671472</td>
+                </tr>
+                <tr>
+                    <td>REYES SANTOS JOSÉ SANDRO</td>
+                    <td>SUBDIRECTOR ACADÉMICO</td>
+                    <td><a href="mailto:cbtis253.subdir@dgeti.sems.gob.mx">cbtis253.subdir@dgeti.sems.gob.mx</a></td>
+                    <td>9831400852</td>
+                </tr>
+                <tr>
+                    <td>MENDOZA OLIVA ROGELIO</td>
+                    <td>JEFE DEL DEPARTAMENTO DE PLANEACIÓN Y EVALUACIÓN</td>
+                    <td><a href="mailto:cbtis253.planeacion@dgeti.sems.gob.mx">cbtis253.planeacion@dgeti.sems.gob.mx</a></td>
+                    <td>9831124919</td>
+                </tr>
+                <tr>
+                    <td>BAÑUELOS MORAZA ABEL</td>
+                    <td>JEFE DEL DEPARTAMENTO DE SERVICIOS DOCENTES T.M.</td>
+                    <td><a href="mailto:serviciosdocentes@cbtis253.edu.mx">serviciosdocentes@cbtis253.edu.mx</a></td>
+                    <td>9831095197</td>
+                </tr>
+                <tr>
+                    <td>RAMOS SANTIAGO JUDITH</td>
+                    <td>JEFE DEL DEPARTAMENTO DE SERVICIOS DOCENTES T.V.</td>
+                    <td><a href="mailto:judith.ramos.cb253@dgeti.sems.gob.mx">judith.ramos.cb253@dgeti.sems.gob.mx </a></td>
+                    <td>9838367561</td>
+                </tr>
+                <tr>
+                    <td>ROGER ABRAHAM HERNANDEZ</td>
+                    <td>JEFE DEL DEPARTAMENTO DE SERVICIOS ESCOLARES T.M.</td>
+                    <td><a href="mailto:rogerabraham.hernandez.cb253@dgeti.sems.gob.mx">rogerabraham.hernandez.cb253@dgeti.sems.gob.mx</a></td>
+                    <td>9838367561</td>
+                </tr>
+                <tr>
+                    <td>ROBERTO RIVAS PADILLA</td>
+                    <td>JEFE DEL DEPARTAMENTO DE SERVICIOS ESCOLARES T.V.</td>
+                    <td><a href="mailto:beto7606@hotmail.com">beto7606@hotmail.com </a></td>
+                    <td>9838367561</td>
+                </tr>                
+            </tbody>
+        </table>
+    </section>
+    
+    <section class="announcements" id="avisos">
+        <h2 class="section-title">Avisos Importantes</h2>
         <div class="announcements-container">
             <div class="announcement">
                 <h3>Inscripciones para el ciclo escolar 2025-2026</h3>
@@ -372,41 +536,45 @@
         </div>
     </section>
     
-    <footer>
+    <footer id="contacto">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <address>
-                    Av. Tecnológico #123<br>
-                    Col. Educativa, C.P. 12345<br>
-                    Ciudad, Estado
+                    Av. Sac-Xan #555<br>
+                    Col. Solidaridad, C.P. 77086<br>
+                    Chetumal, Quintana Roo, México
                 </address>
-                <p>Teléfono: (123) 456-7890</p>
-                <p>Email: contacto@cbtis253.edu.mx</p>
+                <p>Teléfono: +52 983-180-7371</p>
+                <p>Email: <a href="mailto:direccion@cbtis253.edu.mx" style="color: white;">direccion@cbtis253.edu.mx</a></p>
             </div>
             
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
-                <p><a href="#" style="color: white;">Admisiones</a></p>
-                <p><a href="#" style="color: white;">Becas</a></p>
-                <p><a href="#" style="color: white;">Servicio Social</a></p>
-                <p><a href="#" style="color: white;">Prácticas Profesionales</a></p>
+                <p><a href="#oferta-educativa" style="color: white;">Oferta Educativa</a></p>
+                <p><a href="#mision-vision" style="color: white;">Misión y Visión</a></p>
+                <p><a href="#programas" style="color: white;">Programas Institucionales</a></p>
+                <p><a href="#directorio" style="color: white;">Directorio</a></p>
+                <p><a href="#avisos" style="color: white;">Avisos Importantes</a></p>
             </div>
             
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <div class="social-links">
-                    <a href="#">FB</a>
-                    <a href="#">TW</a>
-                    <a href="#">IG</a>
-                    <a href="#">YT</a>
+                    <a href="https://es-la.facebook.com/253CBTis/" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/cbtis_253/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>                    
                 </div>
             </div>
         </div>
         
         <div class="copyright">
-            <p>&copy; 2025 CBTis 253 - Todos los derechos reservados</p>
+            <p>&copy; 2025 CBTis 253 "Miguel Hidalgo y Costilla" - Todos los derechos reservados</p>
         </div>
     </footer>
+    <script src="./script.js"></script>    
 </body>
 </html>
