@@ -626,6 +626,114 @@ img[data-src]:not([src]) {
     display: none;
 }
 
+/* Estilos para la nueva sección de redes sociales (style.css) */
+
+.social-feed {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+}
+
+.social-feed-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.facebook-feed {
+    flex: 1 1 500px;
+    min-width: 340px;
+}
+
+.facebook-feed h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.social-info {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.social-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.social-info p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.social-large-icons {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.social-large-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    min-width: 120px;
+}
+
+.social-large-icon i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.social-large-icon span {
+    font-weight: bold;
+}
+
+.social-large-icon:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(157, 36, 73, 0.3);
+}
+
+.social-cta {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    text-align: center;
+    border-left: 4px solid var(--gold-color);
+}
+
+.social-cta strong {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Ajustar el contenedor del plugin de Facebook para mejor visualización */
+.fb-page, .fb-page iframe, .fb-page span {
+    width: 100% !important;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
 @media (max-width: 768px) {
     .header-text h1 {
         font-size: 1.5rem;
@@ -667,5 +775,17 @@ img[data-src]:not([src]) {
     .main-container {
         border-width: 15px; /* Reducir el ancho del borde en dispositivos móviles */
         margin: 10px auto;
+    }
+
+    .facebook-feed {
+        width: 100%;
+    }
+    
+    .fb-page {
+        width: 100% !important;
+    }
+    
+    .social-large-icons {
+        justify-content: center;
     }
 }

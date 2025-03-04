@@ -35,6 +35,7 @@
             <li><a href="#directorio">Directorio</a></li>
             <li><a href="#avisos">Avisos Importantes</a></li>
             <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#redes-sociales">Redes Sociales</a></li>
         </ul>
     </nav>
     
@@ -538,6 +539,49 @@
             </div>
         </div>
     </section>
+
+    <!-- Modificaciones al archivo HTML (index.html) -->
+
+<!-- 1. Agregar nueva sección para las publicaciones de Facebook después de la sección de avisos -->
+<section class="social-feed" id="redes-sociales">
+    <h2 class="section-title">Síguenos en Redes Sociales</h2>
+    <div class="social-feed-container">
+        <div class="facebook-feed">
+            <h3>Nuestras Publicaciones Recientes</h3>
+            <div class="fb-page" 
+                data-href="https://www.facebook.com/253CBTis/" 
+                data-tabs="timeline" 
+                data-width="500" 
+                data-height="700" 
+                data-small-header="false" 
+                data-adapt-container-width="true" 
+                data-hide-cover="false" 
+                data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/253CBTis/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/253CBTis/">CBTis 253 "Miguel Hidalgo y Costilla"</a>
+                </blockquote>
+            </div>
+        </div>
+        <div class="social-info">
+            <h3>Mantente Conectado</h3>
+            <p>Síguenos en nuestras redes sociales para estar al tanto de eventos, convocatorias y noticias importantes del plantel.</p>
+            <div class="social-large-icons">
+                <a href="https://es-la.facebook.com/253CBTis/" target="_blank" class="social-large-icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/cbtis_253/" target="_blank" class="social-large-icon">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+            <div class="social-cta">
+                <p>¿Eres parte de la comunidad CBTis 253?</p>
+                <p>Comparte tus experiencias usando el hashtag: <strong>#SoyCBTis253</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
     
     <footer id="contacto">
         <div class="footer-content">
@@ -559,6 +603,7 @@
                 <p><a href="#programas" style="color: white;">Programas Institucionales</a></p>
                 <p><a href="#directorio" style="color: white;">Directorio</a></p>
                 <p><a href="#avisos" style="color: white;">Avisos Importantes</a></p>
+                <p><a href="#redes-sociales" style="color: white;">Redes Sociales</a></p>
             </div>
             
             <div class="footer-section">
@@ -578,8 +623,10 @@
             <p>&copy; 2025 CBTis 253 "Miguel Hidalgo y Costilla" - Todos los derechos reservados</p>
             <p>Diseño y Desarrollo por <a href="https://chetech.com.mx" target="_blank">CheTech</a></p>
         </div>
-    </footer>
-    <script src="./script.js"></script>    
+    </footer>    
     </div>
+    <div id="fb-root"></div>
+    <script src="./script.js"></script>    
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0" nonce="randomNonce"></script>
 </body>
 </html>
