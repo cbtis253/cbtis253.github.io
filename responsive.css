@@ -1,0 +1,227 @@
+/* Mejoras para dispositivos móviles - Estilos generales que se aplicarán a todos los tamaños */
+@media (max-width: 1024px) {
+    .header-text h1 {
+        font-size: 3.0rem;
+    }
+    
+    .header-text h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero {
+        height: auto;
+    }
+    
+    .hero-container {
+        flex-direction: column;
+    }
+    
+    .hero-content, .hero-image {
+        flex: 1 1 100%;
+    }
+    
+    .hero-image {
+        height: 250px;
+    }
+    
+    .features-container {
+        gap: 15px;
+    }
+    
+    .directory-table {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos para tablets */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 80%;
+        max-width: 320px;
+    }
+    
+    .header-flex-container {
+        flex-direction: column;
+    }
+    
+    .woman-logo-container {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+        padding-right: 0;
+        max-width: 150px;
+    }
+    
+    .header-text {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .info-bar span {
+        display: block;
+        padding: 0 15px;
+    }
+    
+    .mission-vision-container {
+        gap: 20px;
+    }
+    
+    .program-card {
+        flex: 1 1 45%;
+    }
+    
+    .tab-buttons {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+    }
+    
+    .tab-button {
+        white-space: nowrap;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .directory-table th, .directory-table td {
+        padding: 8px;
+    }
+    
+    .directory-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Estilos específicos para teléfonos móviles */
+@media (max-width: 480px) {
+    .main-container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .main-container::before, .main-container::after {
+        height: 30px;
+    }
+    
+    .logo-img {
+        width: 90%;
+        max-width: 240px;
+    }
+    
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    
+    .header-text h2 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content {
+        padding: 30px 20px;
+    }
+    
+    .hero-image {
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin: 30px 0 20px;
+    }
+    
+    .feature-card, .program-card {
+        flex: 1 1 100%;
+    }
+    
+    .announcement {
+        flex: 1 1 100%;
+    }
+    
+    .mission-box, .vision-box {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+    
+    .accordion-header {
+        padding: 12px 15px;
+    }
+    
+    .accordion-content-inner {
+        padding: 15px;
+    }
+    
+    .tab-content {
+        padding: 15px 10px;
+    }
+    
+    .tab-button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .social-large-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-large-icon {
+        width: 80%;
+    }
+}
+
+/* Optimizaciones para navegación en dispositivos pequeños */
+@media (max-width: 380px) {
+    .info-bar {
+        font-size: 0.8rem;
+        padding: 8px 5px;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .accordion-header {
+        font-size: 0.9rem;
+    }
+    
+    .tab-content h4 {
+        font-size: 1rem;
+    }
+    
+    .tab-content {
+        font-size: 0.9rem;
+    }
+    
+    .accordion-content {
+        font-size: 0.9rem;
+    }
+}

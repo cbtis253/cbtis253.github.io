@@ -3,15 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CBTis 253 - Centro de Bachillerato Tecnológico Industrial y de Servicios "Miguel Hidalgo y Costilla"</title>    
     <link href="https://framework-gb.cdn.gob.mx/gm/v4/image/favicon.ico" rel="shortcut icon">
     <link href="https://framework-gb.cdn.gob.mx/gm/v4/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./edge-compatibility.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./responsive.css">    
     <link rel="icon" href="./assets/icon/icon.png" type="image/png">    
     <link rel="preload" as="image" href="./assets/images/logos.svg">
     <link rel="preload" as="image" href="./assets/images/franja.jpg">    
@@ -28,13 +26,13 @@
                     <img src="./assets/images/woman_bandera.jpg" alt="Mujer con Bandera" class="woman-logo-img">
                 </div>
                 <div class="header-text">
-                    <h2>Centro de Bachillerato Tecnológico Industrial y de Servicios No. 253</h2>
-                    <h3>"Miguel Hidalgo y Costilla"</h3>
+                    <h1>Centro de Bachillerato Tecnológico Industrial y de Servicios No. 253</h1>
+                    <h2>"Miguel Hidalgo y Costilla"</h2>
                 </div>
             </div>
         </header>
         <div class="info-bar"><span>Email: <a href="mailto:direccion@cbtis253.edu.mx">direccion@cbtis253.edu.mx</a> |
-                Teléfono: +52 983-180-7371 | Horario de atención: 9:00 a.m. a 6:00 p.m.</span></div>
+                Teléfono: <a href="tel:+529831807371">+52 983-180-7371</a> | Horario de atención: 9:00 a.m. a 6:00 p.m.</span></div>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
@@ -46,7 +44,12 @@
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="#redes-sociales">Redes Sociales</a></li>
             </ul>
-        </nav>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>        
         <section class="hero" id="inicio">
             <div class="hero-container">                
                 <div class="hero-content">
@@ -535,55 +538,55 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>CAMPOS HERRERA ASIS ILEANA</td>
-                        <td>DIRECTORA DEL PLANTEL</td>
-                        <td><a href="mailto:cbtis253.dir@dgeti.sems.gob.mx">cbtis253.dir@dgeti.sems.gob.mx</a></td>
-                        <td><a href="tel:9838671472">983-867-1472</a></td>
+                    <tr>                        
+                        <td data-label="NOMBRE">CAMPOS HERRERA ASIS ILEANA</td>
+                        <td data-label="CARGO">DIRECTORA DEL PLANTEL</td>
+                        <td data-label="CORREO ELECTRÓNICO"><a href="mailto:cbtis253.dir@dgeti.sems.gob.mx">cbtis253.dir@dgeti.sems.gob.mx</a></td>
+                        <td data-label="TELÉFONO"><a href="tel:9838671472">983-867-1472</a></td>                        
                     </tr>
                     <tr>
-                        <td>REYES SANTOS JOSÉ SANDRO</td>
-                        <td>SUBDIRECTOR ACADÉMICO</td>
-                        <td><a href="mailto:cbtis253.subdir@dgeti.sems.gob.mx">cbtis253.subdir@dgeti.sems.gob.mx</a>
+                        <td data-label="NOMBRE">REYES SANTOS JOSÉ SANDRO</td>
+                        <td data-label="CARGO">SUBDIRECTOR ACADÉMICO</td>
+                        <td data-label="CORREO ELECTRÓNICO"><a href="mailto:cbtis253.subdir@dgeti.sems.gob.mx">cbtis253.subdir@dgeti.sems.gob.mx</a>
                         </td>
-                        <td><a href="tel:9831400852">983-140-0852</a></td>
+                        <td data-label="TELÉFONO"><a href="tel:9831400852">983-140-0852</a></td>
                     </tr>
                     <tr>
-                        <td>MENDOZA OLIVA ROGELIO</td>
-                        <td>JEFE DEL DEPARTAMENTO DE PLANEACIÓN Y EVALUACIÓN</td>
-                        <td><a
+                        <td data-label="NOMBRE">MENDOZA OLIVA ROGELIO</td>
+                        <td data-label="CARGO">JEFE DEL DEPARTAMENTO DE PLANEACIÓN Y EVALUACIÓN</td>
+                        <td data-label="CORREO ELECTRÓNICO"><a
                                 href="mailto:cbtis253.planeacion@dgeti.sems.gob.mx">cbtis253.planeacion@dgeti.sems.gob.mx</a>
                         </td>
-                        <td><a href="tel:9831124919">983-112-4919</a></td>
+                        <td data-label="TELÉFONO"><a href="tel:9831124919">983-112-4919</a></td>
                     </tr>
                     <tr>
-                        <td>BAÑUELOS MORAZA ABEL</td>
-                        <td>JEFE DEL DEPARTAMENTO DE SERVICIOS DOCENTES T.M.</td>
-                        <td><a href="mailto:serviciosdocentes@cbtis253.edu.mx">serviciosdocentes@cbtis253.edu.mx</a>
+                        <td data-label="NOMBRE">BAÑUELOS MORAZA ABEL</td>
+                        <td data-label="CARGO">JEFE DEL DEPARTAMENTO DE SERVICIOS DOCENTES T.M.</td>
+                        <td data-label="CORREO ELECTRÓNICO"><a href="mailto:serviciosdocentes@cbtis253.edu.mx">serviciosdocentes@cbtis253.edu.mx</a>
                         </td>
-                        <td><a href="tel:9831095197">983-109-5197</a></td>
+                        <td data-label="TELÉFONO"><a href="tel:9831095197">983-109-5197</a></td>
                     </tr>
                     <tr>
-                        <td>RAMOS SANTIAGO JUDITH</td>
-                        <td>JEFE DEL DEPARTAMENTO DE SERVICIOS DOCENTES T.V.</td>
-                        <td><a href="mailto:judith.ramos.cb253@dgeti.sems.gob.mx">judith.ramos.cb253@dgeti.sems.gob.mx
+                        <td data-label="NOMBRE">RAMOS SANTIAGO JUDITH</td>
+                        <td data-label="CARGO">JEFE DEL DEPARTAMENTO DE SERVICIOS DOCENTES T.V.</td>
+                        <td data-label="CORREO ELECTRÓNICO"><a href="mailto:judith.ramos.cb253@dgeti.sems.gob.mx">judith.ramos.cb253@dgeti.sems.gob.mx
                             </a></td>
-                        <td><a href="tel:9838367561">983-836-7561</a></td>
+                        <td data-label="TELÉFONO"><a href="tel:9838367561">983-836-7561</a></td>
                     </tr>
                     <tr>
-                        <td>ROGER ABRAHAM HERNANDEZ</td>
-                        <td>JEFE DEL DEPARTAMENTO DE SERVICIOS ESCOLARES T.M.</td>
-                        <td><a
+                        <td data-label="NOMBRE">ROGER ABRAHAM HERNANDEZ</td>
+                        <td data-label="CARGO">JEFE DEL DEPARTAMENTO DE SERVICIOS ESCOLARES T.M.</td>
+                        <td data-label="CORREO ELECTRÓNICO"><a
                                 href="mailto:rogerabraham.hernandez.cb253@dgeti.sems.gob.mx">rogerabraham.hernandez.cb253@dgeti.sems.gob.mx</a>
                         </td>
-                        <td><a href="tel:9831563894">983-156-3894</a></td>
+                        <td data-label="TELÉFONO"><a href="tel:9831563894">983-156-3894</a></td>
                     </tr>
                     <tr>
-                        <td>ROBERTO RIVAS PADILLA</td>
-                        <td>JEFE DEL DEPARTAMENTO DE SERVICIOS ESCOLARES T.V.</td>
-                        <td><a href="mailto:robertocarlos.rivas.cb253@dgeti.sems.gob.mx">robertocarlos.rivas.cb253@dgeti.sems.gob.mx
+                        <td data-label="NOMBRE">ROBERTO RIVAS PADILLA</td>
+                        <td data-label="CARGO">JEFE DEL DEPARTAMENTO DE SERVICIOS ESCOLARES T.V.</td>
+                        <td data-label="CORREO ELECTRÓNICO"><a href="mailto:robertocarlos.rivas.cb253@dgeti.sems.gob.mx">robertocarlos.rivas.cb253@dgeti.sems.gob.mx
                             </a></td>
-                        <td><a href="tel:9831101246">983-110-1246</a></td>
+                        <td data-label="TELÉFONO"><a href="tel:9831101246">983-110-1246</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -644,7 +647,7 @@
                     <h3>Contacto</h3>
                     <address>Av. Sac-Xan #555<br>Col. Solidaridad, C.P. 77086<br>Chetumal, Quintana Roo, México
                     </address>
-                    <p>Teléfono: +52 983-180-7371</p>
+                    <a href="tel:+529831807371">+52 983-180-7371</a>
                     <p>Email: <a href="mailto:direccion@cbtis253.edu.mx"
                             style="color:white">direccion@cbtis253.edu.mx</a></p>
                 </div>
@@ -681,7 +684,7 @@
     <script src="./script.js"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0"
         nonce="C53F9GH78xzPOl2q"></script>
-    <script src="./edge-compatibility.js"></script>
+    <script src="./responsive.js"></script>    
 </body>
 
 </html>
