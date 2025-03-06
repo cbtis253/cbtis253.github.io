@@ -97,6 +97,8 @@ header {
     background: transparent;
     border: none;
     box-shadow: none;
+    /* Asegura que el contenedor no crezca demasiado */
+    max-width: 180px;
 }
 
 .woman-logo-img {
@@ -107,6 +109,9 @@ header {
     background: transparent;
     border: none;
     box-shadow: none;
+    /* Controla el tamaño máximo de la imagen */
+    max-height: 150px;
+    width: auto;
 }
 
 .header-text {
@@ -806,14 +811,13 @@ img[data-src]:not([src]) {
         flex-direction: column;
     }
     
-    .woman-logo-container, .header-text {
-        flex: 0 0 100%;
-        text-align: center;
-        padding: 0;
-    }
-    
     .woman-logo-container {
         margin-bottom: 20px;
+        max-width: 120px;
+    }
+    
+    .woman-logo-img {
+        max-height: 100px;
     }
 
     nav ul {
