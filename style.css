@@ -97,6 +97,8 @@ header {
     background: transparent;
     border: none;
     box-shadow: none;
+    /* Asegura que el contenedor no crezca demasiado */
+    max-width: 360px;
 }
 
 .woman-logo-img {
@@ -107,6 +109,9 @@ header {
     background: transparent;
     border: none;
     box-shadow: none;
+    /* Controla el tamaño máximo de la imagen */
+    max-height: 150px;
+    width: auto;
 }
 
 .header-text {
