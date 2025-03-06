@@ -36,6 +36,11 @@ body::after {
     border: none
 }
 
+body, .main-container {
+    background-color: #fff !important;
+    color: var(--text-color) !important;
+}
+
 .main-container::before {
     content: "";
     position: absolute;
@@ -842,6 +847,33 @@ img[data-src]:not([src]) {
 .mobile-menu-toggle.active .bar:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
+
+.features, .programs, .mission-vision, .social-feed {
+    background-color: var(--accent-color) !important;
+    color: var(--text-color) !important;
+}
+
+.mission-vision {
+    background-color: var(--primary-color) !important;
+    color: var(--light-text) !important;
+}
+
+.tab-content, .accordion-content {
+    background-color: #fff !important;
+}
+
+.tab-content p, .tab-content li {
+    color: var(--text-color) !important;
+}
+
+a {
+   -webkit-text-fill-color: inherit;
+}
+
+footer a {
+    -webkit-text-fill-color: var(--gold-color);
+}
+
 
 @media (max-width: 768px) {
     .mobile-menu-toggle {
