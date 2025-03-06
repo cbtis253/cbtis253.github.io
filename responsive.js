@@ -41,31 +41,6 @@ function enhanceTabsForMobile() {
     });
 }
 
-// Función para mejorar el comportamiento de los acordeones en móviles
-function enhanceAccordionsForMobile() {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', function() {
-            // En móvil, cierra otros acordeones al abrir uno nuevo
-            if (window.innerWidth <= 768) {
-                const currentAccordion = this;
-                
-                accordionHeaders.forEach(otherHeader => {
-                    if (otherHeader !== currentAccordion && otherHeader.classList.contains('active')) {
-                        otherHeader.click();
-                    }
-                });
-                
-                // Hace scroll al acordeón abierto
-                setTimeout(() => {
-                    this.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 300);
-            }
-        });
-    });
-}
-
 // Función para cargar imágenes de forma perezosa en móviles
 function setupLazyLoading() {
     if ('IntersectionObserver' in window) {
@@ -115,93 +90,15 @@ function enhanceResponsiveTables() {
 
 // Inicializar todas las funciones cuando se carga el DOM
 document.addEventListener('DOMContentLoaded', function() {
-    // Mantener las funciones originales
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    accordionHeaders.forEach(function(header) {
-        header.addEventListener('click', function() {
-            this.classList.toggle('active');
-            const content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-            
-            // Solo en escritorio, cerrar otros acordeones
-            if (window.innerWidth > 768) {
-                accordionHeaders.forEach(function(otherHeader) {
-                    if (otherHeader !== this) {
-                        otherHeader.classList.remove('active');
-                        const otherContent = otherHeader.nextElementSibling;
-                        otherContent.style.maxHeight = null;
-                    }
-                }.bind(this));
-            }
-        });
-    });
-    
-    // Activar primer tab por defecto
-    document.querySelectorAll('.tab-buttons').forEach(function(tabButtons) {
-        const firstButton = tabButtons.querySelector('.tab-button');
-        if (firstButton) {
-            firstButton.classList.add('active');
-            const onclick = firstButton.getAttribute('onclick');
-            const match = onclick.match(/openTab\(event,\s*['"]([^'"]+)['"]\)/);
-            if (match && match[1]) {
-                const tabId = match[1];
-                const tabContent = document.getElementById(tabId);
-                if (tabContent) {
-                    tabContent.classList.add('active');
-                }
-            }
-        }
-    });
     
     // Nuevas funciones para responsividad
     setupMobileMenu();
     enhanceTabsForMobile();
-    enhanceAccordionsForMobile();
     setupLazyLoading();
     enhanceResponsiveTables();
-    
-    // Ajustar la altura de los acordeones cuando cambia el tamaño de la ventana
-    window.addEventListener('resize', function() {
-        const activeAccordions = document.querySelectorAll('.accordion-header.active');
-        activeAccordions.forEach(function(header) {
-            const content = header.nextElementSibling;
-            content.style.maxHeight = content.scrollHeight + "px";
-        });
-        
-        enhanceResponsiveTables();
-    });
 });
 
-// Mantener la función openTab original
-window.openTab = function(event, tabId) {
-    const tabContainer = event.currentTarget.closest('.tab-container');
-    const tabButtons = tabContainer.querySelectorAll('.tab-button');
-    const tabContents = tabContainer.querySelectorAll('.tab-content');
-    
-    tabButtons.forEach(function(button) {
-        button.classList.remove('active');
-    });
-    
-    tabContents.forEach(function(content) {
-        content.classList.remove('active');
-    });
-    
-    event.currentTarget.classList.add('active');
-    
-    const targetTab = document.getElementById(tabId);
-    if (targetTab) {
-        targetTab.classList.add('active');
-    }
-    
-    // Ajustar la altura del acordeón cuando se cambia de tab
-    const accordionContent = event.currentTarget.closest('.accordion-content');
-    if (accordionContent && accordionContent.style.maxHeight) {
-        setTimeout(function() {
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-        }, 50);
-    }
-};
+// Si deseas mantener la funcionalidad de redimensionamiento para tablas responsivas
+window.addEventListener('resize', function() {
+    enhanceResponsiveTables();
+});
